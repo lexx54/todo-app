@@ -32,3 +32,15 @@ main {
   font-style: italic;
   line-height: 1.3em;
 }
+
+.prin-options {
+  border-bottom: 1px solid red;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2em;
+  font-weight: 600;
+}
+.prin-options p {
+  padding-bottom: 0.5em;
+  cursor: pointer;
+}
