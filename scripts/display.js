@@ -21,5 +21,6 @@ export function displayActive(){
   console.log("active")
 }
 export function displayCompleted(){
+  $container.innerHTML="";
   console.log("completed")
 }
