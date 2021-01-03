@@ -13,7 +13,7 @@ body {
 main {
   width: 90vw;
   margin: 0 auto;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 .prin-title {
   display: flex;
@@ -44,7 +44,28 @@ main {
   padding-bottom: 0.5em;
   cursor: pointer;
 }
-
+.display-add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0;
+}
+.display-input {
+  flex: 0 0 60%;
+  border-radius: 10px;
+  border: 1px solid red;
+  outline: none;
+  padding: 0.5em;
+}
 .display-label {
+  border-radius: 10px;
   cursor: pointer;
+  flex: 0 0 20%;
+  padding: 0.5em 1em;
+  background-color: cadetblue;
+  text-align: center;
+}
+
+.completed {
+  text-decoration: line-through;
 }
