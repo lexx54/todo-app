@@ -4,7 +4,11 @@ const d=document,
 
 
 export function displayAll(){
-  
+  const data=[];
+  for(let i=0;i<localStorage.length;i++){
+    if(data.includes(`action${i}`)) data.push(localStorage.getItem(`action${i}`));
+  }
+  console.log(data)
   $container.innerHTML=`<input type="text" placeholder="add details" class="display-input" name="info">
   <label class="display-label" name="info">Add</label>`;
   console.log("all")
