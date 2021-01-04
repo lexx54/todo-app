@@ -145,3 +145,29 @@ footer {
   font-size: 3em;
   color: var(--color-sec);
 }
+/*-----------------darkmode----------------*/
+.dark-mode {
+  border: 1px solid black;
+  border-radius: 25px;
+  width: 50px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 5vw;
+}
+.dark-mode-cont {
+  background-color: blue;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transform: translateX(0);
+  transition: transform 1s ease;
+}
+.changeDark {
+  transform: translateX(20px);
+  transition: transform 1s ease;
+}
