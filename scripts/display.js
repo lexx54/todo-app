@@ -1,32 +1,12 @@
 const d=document,
   $container=d.querySelector(".prin-display");
 
-export function displayAll(){
-  $container.children[0].innerHTML=`<input type="text" placeholder="add details" class="display-input" name="info">
-  <label class="display-label" name="info">Add</label>`;
-
-  retrive("all");
-  console.log("all")
-}
-
-export function displayActive(){
-  $container.children[0].innerHTML=`<input type="text" placeholder="add details" class="display-input" name="info">
-  <label class="display-label" name="info">Add</label>`;
-  retrive("act")
-  console.log("active")
-}
-export function displayCompleted(){
-  $container.children[0].innerHTML="";
-  retrive("com");
-  console.log("completed")
-}
-
-function retrive(type){
-  let task=localStorage.getItem("tasks")
+export function retrive(type){
+  let task=localStorage.getItem("tasks") //get the elemments from task
   ? localStorage.getItem("tasks").split(",")
   :[];
 
-  let completed=localStorage.getItem("completed")
+  let completed=localStorage.getItem("completed") //get the elements from completed
   ? localStorage.getItem("completed").split(",")
   :[];
 
@@ -34,9 +14,13 @@ function retrive(type){
   while(erase.firstChild) erase.removeChild(erase.lastChild); //erase all the elements before apply more
 
   if(type==="all"){
+    $container.children[0].innerHTML=`<input type="text" placeholder="add details" class="display-input" name="info">
+  <label class="display-label" name="info">Add</label>`;
     displayInfo(task)
     displayInfo(completed,'checked','completed');
   } else if( type==='act'){
+    $container.children[0].innerHTML=`<input type="text" placeholder="add details" class="display-input" name="info">
+  <label class="display-label" name="info">Add</label>`;
     displayInfo(task);
   } else if(type==="com"){
     displayInfo(completed,'checked','completed');
