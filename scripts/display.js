@@ -14,16 +14,14 @@ export function retrive(type){
   let erase=$container.children[1];
   while(erase.firstChild) erase.removeChild(erase.lastChild); //erase all the elements before apply more
 
-
-
   if(type==="opt-all"){
     //remove the class from the other option before applying it
     $options[1].classList.remove('selected');
     $options[2].classList.remove('selected');
-
+    //apply the class to the current page
     $options[0].classList.add('selected');
-    $container.children[0].innerHTML=`<input type="text" placeholder="add details" class="add-input" name="info">
-  <label class="add-label" name="info">Add</label>`;
+
+    createInput()
     displayInfo(task)
     displayInfo(completed,'checked','completed');
   } else if( type==='opt-active'){
@@ -32,8 +30,7 @@ export function retrive(type){
     $options[2].classList.remove('selected');
 
     $options[1].classList.add('selected');
-    $container.children[0].innerHTML=`<input type="text" placeholder="add details" class="add-input" name="info">
-  <label class="add-label" name="info">Add</label>`;
+    createInput()
     displayInfo(task);
   } else if(type==="opt-completed"){
     //remove the class from the other option before applying it
@@ -41,7 +38,7 @@ export function retrive(type){
     $options[0].classList.remove('selected');
 
     $options[2].classList.add('selected');
-    $container.children[0].innerHTML='';
+    while($container.children[0].firstChild) $container.children[0].removeChild($container.children[0].lastChild);
     displayInfo(completed,'checked','completed');
   }
 }
@@ -72,4 +69,23 @@ function displayInfo(type){
     } else $cont.appendChild($span);
     $container.children[1].appendChild($cont);
   }
+}
+
+function createInput(){
+  const $input=d.createElement("input"),
+    $label=d.createElement("label"),
+    $head=$container.children[0];
+
+    while($head.firstChild) $head.removeChild($head.lastChild);
+
+    $input.placeholder="Add Details";
+    $input.classList.add("add-input");
+    $input.name='info';
+
+    $label.classList.add("add-label");
+    $label.name='info';
+    $label.textContent="Add"
+
+    $head.appendChild($input);
+    $head.appendChild($label);
 }
