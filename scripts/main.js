@@ -1,6 +1,6 @@
 import { add } from "./addData.js";
 import { complete, uncompleted } from "./complete.js";
-import { changeMode } from "./darkMode.js";
+import { changeMode, setMode } from "./darkMode.js";
 import { deleteInfo } from "./deleteData.js";
 import { createBtn, retrive } from "./display.js"
 
@@ -8,6 +8,10 @@ const d=document;
 
 d.addEventListener("DOMContentLoaded",e=>{
   retrive('opt-all');
+  setMode();
+})
+d.addEventListener("",e=>{
+  
 })
 document.addEventListener('click',e=>{
   if (e.target.matches(".opt-all")) retrive('opt-all');
@@ -40,5 +44,8 @@ document.addEventListener('click',e=>{
     localStorage.removeItem("completed")
     retrive(d.querySelector(".selected").classList[0])
   };
-  if(e.target.matches(".dark-mode-cont")) changeMode();
+  if(e.target.matches(".dark-mode-cont")){
+    changeMode();
+    setMode();
+  } 
 })
