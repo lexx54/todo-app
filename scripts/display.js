@@ -60,7 +60,7 @@ function displayInfo(type){
 
       $in.checked=arguments[1];
       $label.className=arguments[2];
-      $pic.classList.add("far","fa-trash-alt")
+      $pic.classList.add("far","fa-trash-alt","far-del")
 
       $cont.appendChild($span);
       $cont.appendChild($pic);

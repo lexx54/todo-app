@@ -30,8 +30,13 @@ document.addEventListener('click',e=>{
     // complete(e.target);
     retrive(d.querySelector(".selected").classList[0])
   }
-  if(e.target.matches(".fa-trash-alt")) {
+  if(e.target.matches(".far-del")) {
     deleteInfo(e.target)
     retrive(d.querySelector(".selected").classList[0])
+    createBtn();
   }
+  if(e.target.matches(".btn-info")) {
+    localStorage.removeItem("completed")
+    retrive(d.querySelector(".selected").classList[0])
+  };
 })
