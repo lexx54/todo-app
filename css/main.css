@@ -79,9 +79,6 @@ main {
   background-color: var(--color-third);
   text-align: center;
 }
-
-.add-label:hover {
-}
 .display-info {
   display: flex;
   flex-direction: column;
