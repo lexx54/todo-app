@@ -23,18 +23,23 @@ console.log("dark")
 
 export function setMode(){
   let mode=localStorage.getItem("theme"),
-  $btn=d.querySelector(".dark-mode-cont");;
+  $btn=d.querySelector(".dark-mode-cont"),
+  $border=d.querySelector(".dark-mode");
 
   if(mode==="light"){
+    $btn.style.backgroundColor="#7cdf64";
+    $border.style.border="1px solid black";
     $btn.classList.add("changeDark");
     document.body.style.backgroundColor="white";
     document.body.style.color="black";
     $btn.textContent="🌙";
   }else if (mode==="dark"){
     $btn.classList.remove("changeDark");
+    $btn.style.backgroundColor="red";
     $btn.textContent="☀️";
     document.body.style.backgroundColor="black";
     document.body.style.color="white";
+    $border.style.border="1px solid white";
   }
 
 }
