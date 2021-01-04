@@ -65,8 +65,11 @@ function displayInfo(type){
       $cont.appendChild($span);
       $cont.appendChild($pic);
     } else $cont.appendChild($span);
+
     $container.children[1].appendChild($cont);
+    
   }
+  if(d.querySelector(".selected").classList[0]==="opt-completed")createBtn();
 }
 
 function createInput(){

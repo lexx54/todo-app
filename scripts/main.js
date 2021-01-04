@@ -16,29 +16,21 @@ d.addEventListener("",e=>{
 document.addEventListener('click',e=>{
   if (e.target.matches(".opt-all")) retrive('opt-all');
   if (e.target.matches(".opt-active"))  retrive('opt-active');
-  if (e.target.matches(".opt-completed")) {retrive('opt-completed');createBtn()}
+  if (e.target.matches(".opt-completed")) retrive('opt-completed');
   if (e.target.matches(".add-label")){
     add();
     retrive(d.querySelector(".selected").classList[0])//look for the element that own the selected class and pass it the first class of the list as parameter
   } 
   if (e.target.matches(".btn-in")) {
 
-    if(e.target.checked){
-      console.log("check");
-      complete(e.target)
-    }else{
-      console.log("uncheck")
-      uncompleted(e.target)
-      // e.target.checked=false;
-    };
-
-    // complete(e.target);
+    if(e.target.checked)complete(e.target)
+    else uncompleted(e.target);
     retrive(d.querySelector(".selected").classList[0])
   }
   if(e.target.matches(".far-del")) {
     deleteInfo(e.target)
     retrive(d.querySelector(".selected").classList[0])
-    createBtn();
+    // createBtn();
   }
   if(e.target.matches(".btn-info")) {
     localStorage.removeItem("completed")
