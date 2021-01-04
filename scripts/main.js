@@ -1,7 +1,7 @@
 import { add } from "./addData.js";
 import { complete, uncompleted } from "./complete.js";
 import { deleteInfo } from "./deleteData.js";
-import { retrive } from "./display.js"
+import { createBtn, retrive } from "./display.js"
 
 const d=document;
 
@@ -11,7 +11,7 @@ d.addEventListener("DOMContentLoaded",e=>{
 document.addEventListener('click',e=>{
   if (e.target.matches(".opt-all")) retrive('opt-all');
   if (e.target.matches(".opt-active"))  retrive('opt-active');
-  if (e.target.matches(".opt-completed")) retrive('opt-completed');
+  if (e.target.matches(".opt-completed")) {retrive('opt-completed');createBtn()}
   if (e.target.matches(".add-label")){
     add();
     retrive(d.querySelector(".selected").classList[0])//look for the element that own the selected class and pass it the first class of the list as parameter

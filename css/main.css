@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 90vh;
+  min-height: 95vh;
 }
 
 /*---------------------------------MAIN------------------------------------*/
@@ -94,9 +94,20 @@ main {
   display: flex;
   justify-content: space-between;
 }
+.display-info .btn-aside {
+  justify-content: flex-end;
+  margin-top: 1em;
+}
+.display-info .btn-aside p {
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  background-color: var(--color-third);
+  font-size: 0.9em;
+}
 .display-info div span label {
   padding: 0 0 0 0.5em;
 }
+
 .completed {
   text-decoration: line-through;
   text-decoration-color: var(--color-sec);

@@ -48,7 +48,7 @@ function displayInfo(type){
       $label=d.createElement("label"),
       $span=d.createElement("span"),
       $pic=d.createElement("i");
-
+ 
     $in.type="checkbox";
     $in.className="btn-in";
     $label.textContent=`${type[i]}`;
@@ -86,4 +86,23 @@ function createInput(){
 
     $head.appendChild($input);
     $head.appendChild($label);
+}
+export function createBtn(){
+  const $div=d.createElement("div"),
+    $para=d.createElement("p"),
+    $ic=d.createElement("i"),
+    $text=d.createTextNode("Delete All");
+
+    $ic.classList.add("far","fa-trash-alt")
+
+    $para.appendChild($ic);
+    $para.appendChild($text);
+    $para.classList.add("btn-info");
+
+    $div.classList.add("btn-aside");
+
+    $div.appendChild($para);
+
+    $container.children[1].appendChild($div)
+
 }
