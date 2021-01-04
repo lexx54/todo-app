@@ -2,7 +2,7 @@ const d=document;
   
 
 export function add(){
-  const $input=d.querySelector(".display-input").value;
+  const $input=d.querySelector(".add-input").value;
   let data=localStorage.getItem('tasks')
     ?localStorage.getItem('tasks').split(",")
     :[],
