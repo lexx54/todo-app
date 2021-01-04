@@ -34,63 +34,29 @@ function retrive(type){
   while(erase.firstChild) erase.removeChild(erase.lastChild); //erase all the elements before apply more
 
   if(type==="all"){
-    for (let i=0; i<task.length; i++){
-      const $para=d.createElement("p"),
-        $btn=d.createElement("input"),
-        $label=d.createElement("label");
-
-      $btn.type="checkbox";
-      $btn.className="btn-in"
-      $label.textContent=`${task[i]}`
-      $para.appendChild($btn);
-      $para.appendChild($label);
-
-      $container.children[1].appendChild($para)
-    }
-    for (let i=0; i<completed.length; i++){
-      const $para=d.createElement("p"),
-        $btn=d.createElement("input"),
-        $label=d.createElement("label");
-
-      $btn.type="checkbox";
-      $btn.className="btn-in";
-      $btn.checked='checked';
-      $label.className="completed"
-      $label.textContent=`${completed[i]}`
-      $para.appendChild($btn);
-      $para.appendChild($label);
-
-      $container.children[1].appendChild($para)
-    }
+    displayInfo(task)
+    displayInfo(completed,'checked','completed');
   } else if( type==='act'){
-    for (let i=0; i<task.length; i++){
-      const $para=d.createElement("p"),
-        $btn=d.createElement("input"),
-        $label=d.createElement("label");
-
-      $btn.type="checkbox";
-      $btn.className="btn-in"
-      $label.textContent=`${task[i]}`
-      $para.appendChild($btn);
-      $para.appendChild($label);
-
-      $container.children[1].appendChild($para)
-    }
+    displayInfo(task);
   } else if(type==="com"){
-    for (let i=0; i<completed.length; i++){
-      const $para=d.createElement("p"),
-        $btn=d.createElement("input"),
-        $label=d.createElement("label");
+    displayInfo(completed,'checked','completed');
+  }
+}
 
-      $btn.type="checkbox";
-      $btn.className="btn-in";
-      $btn.checked='checked';
-      $label.className="completed"
-      $label.textContent=`${completed[i]}`
-      $para.appendChild($btn);
-      $para.appendChild($label);
+function displayInfo(type){
+  for (let i=0; i<type.length; i++){
+    const $para=d.createElement("p"),
+      $btn=d.createElement("input"),
+      $label=d.createElement("label");
 
-      $container.children[1].appendChild($para)
-    }
+    if(arguments[1]) $btn.checked=arguments[1];
+    if(arguments[2]) $label.className=arguments[2];
+    $btn.type="checkbox";
+    $btn.className="btn-in";
+    $label.textContent=`${type[i]}`;
+    $para.appendChild($btn);
+    $para.appendChild($label);
+
+    $container.children[1].appendChild($para)
   }
 }
