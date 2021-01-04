@@ -1,15 +1,13 @@
+import getInfo from "./complete.js";
+
 const d=document,
   $container=d.querySelector(".prin-display"),
   $options=d.querySelector(".prin-options").children;
 
 export function retrive(type){
-  let task=localStorage.getItem("tasks") //get the elemments from task
-  ? localStorage.getItem("tasks").split(",")
-  :[];
+  let task=getInfo("tasks");
 
-  let completed=localStorage.getItem("completed") //get the elements from completed
-  ? localStorage.getItem("completed").split(",")
-  :[];
+  let completed=getInfo("completed");
 
   let erase=$container.children[1];
   while(erase.firstChild) erase.removeChild(erase.lastChild); //erase all the elements before apply more
