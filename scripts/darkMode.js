@@ -22,7 +22,7 @@ console.log("dark")
 }
 
 export function setMode(){
-  let mode=localStorage.getItem("theme"),
+  let mode=localStorage.getItem("theme")?localStorage.getItem("theme"):(localStorage.setItem("theme","light"),"light"),
   $btn=d.querySelector(".dark-mode-cont"),
   $border=d.querySelector(".dark-mode");
 
