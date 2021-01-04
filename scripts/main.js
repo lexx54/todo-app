@@ -15,7 +15,10 @@ document.addEventListener('click',e=>{
     add();
     retrive(d.querySelector(".selected").classList[0])//look for the element that own the selected class and pass it the first class of the list as parameter
   } 
-  if (e.target.matches(".btn-in")) complete(e.target);
+  if (e.target.matches(".btn-in")) {
+    complete(e.target);
+    retrive(d.querySelector(".selected").classList[0])
+  }
   if(e.target.matches(".fa-trash-alt")) {
     deleteInfo(e.target)
     retrive(d.querySelector(".selected").classList[0])
