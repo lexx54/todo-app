@@ -6,6 +6,7 @@ import { retrive } from "./display.js"
 const d=document;
 
 d.addEventListener("DOMContentLoaded",e=>{
+  retrive('opt-all');
 })
 document.addEventListener('click',e=>{
   if (e.target.matches(".opt-all")) retrive('opt-all');
