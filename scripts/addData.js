@@ -11,6 +11,4 @@ export function add(){
     if($input && !regex.test($input)) if (!data.includes($input)) data.push($input);
 
   localStorage.setItem(`tasks`,data);
-  console.log($input)
-  console.log("add")
 }

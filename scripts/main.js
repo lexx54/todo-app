@@ -1,5 +1,5 @@
 import { add } from "./addData.js";
-import { complete } from "./complete.js";
+import { complete, uncompleted } from "./complete.js";
 import { deleteInfo } from "./deleteData.js";
 import { retrive } from "./display.js"
 
@@ -16,7 +16,17 @@ document.addEventListener('click',e=>{
     retrive(d.querySelector(".selected").classList[0])//look for the element that own the selected class and pass it the first class of the list as parameter
   } 
   if (e.target.matches(".btn-in")) {
-    complete(e.target);
+
+    if(e.target.checked){
+      console.log("check");
+      complete(e.target)
+    }else{
+      console.log("uncheck")
+      uncompleted(e.target)
+      // e.target.checked=false;
+    };
+
+    // complete(e.target);
     retrive(d.querySelector(".selected").classList[0])
   }
   if(e.target.matches(".fa-trash-alt")) {
