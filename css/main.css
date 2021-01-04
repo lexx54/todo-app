@@ -82,3 +82,6 @@ main {
 .completed {
   text-decoration: line-through;
 }
+.selected {
+  border-bottom: 3px solid green;
+}

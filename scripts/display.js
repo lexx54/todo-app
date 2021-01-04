@@ -1,5 +1,6 @@
 const d=document,
-  $container=d.querySelector(".prin-display");
+  $container=d.querySelector(".prin-display"),
+  $options=d.querySelector(".prin-options").children;
 
 export function retrive(type){
   let task=localStorage.getItem("tasks") //get the elemments from task
@@ -13,16 +14,33 @@ export function retrive(type){
   let erase=$container.children[1];
   while(erase.firstChild) erase.removeChild(erase.lastChild); //erase all the elements before apply more
 
-  if(type==="all"){
+
+
+  if(type==="opt-all"){
+    //remove the class from the other option before applying it
+    $options[1].classList.remove('selected');
+    $options[2].classList.remove('selected');
+
+    $options[0].classList.add('selected');
     $container.children[0].innerHTML=`<input type="text" placeholder="add details" class="add-input" name="info">
   <label class="add-label" name="info">Add</label>`;
     displayInfo(task)
     displayInfo(completed,'checked','completed');
-  } else if( type==='act'){
+  } else if( type==='opt-active'){
+    //remove the class from the other option before applying it
+    $options[0].classList.remove('selected');
+    $options[2].classList.remove('selected');
+
+    $options[1].classList.add('selected');
     $container.children[0].innerHTML=`<input type="text" placeholder="add details" class="add-input" name="info">
   <label class="add-label" name="info">Add</label>`;
     displayInfo(task);
-  } else if(type==="com"){
+  } else if(type==="opt-completed"){
+    //remove the class from the other option before applying it
+    $options[1].classList.remove('selected');
+    $options[0].classList.remove('selected');
+
+    $options[2].classList.add('selected');
     $container.children[0].innerHTML='';
     displayInfo(completed,'checked','completed');
   }
