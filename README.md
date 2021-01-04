@@ -8,7 +8,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://todo-app-tau-ivory.vercel.app/">
+    <a href="https://todo-app.lexx54.vercel.app/">
       Demo
     </a>
     <span> | </span>
